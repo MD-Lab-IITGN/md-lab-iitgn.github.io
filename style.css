@@ -3,6 +3,7 @@
 ===================================================== */
 html {
     scroll-behavior: smooth;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    min-width: 1300px; /* Force minimum width */
 }
 
 /* Fade Up (used across site) */
@@ -53,6 +55,7 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 /* Logos & text (default = no animation) */
@@ -81,16 +84,14 @@ header {
     animation-delay: 0.3s;
 }
 
-/* Logo sizing */
+/* Logo sizing - Fixed widths */
 .header-logo img {
-    max-width: 300px;
-    width: 100%;
+    width: 300px; /* Fixed width */
     height: auto;
 }
 
 .header-iit-logo img {
-    max-width: 170px;
-    width: 100%;
+    width: 170px; /* Fixed width */
     height: auto;
 }
 
@@ -102,6 +103,7 @@ header {
     letter-spacing: 3px;
     color: #0b3c5d;
     text-transform: uppercase;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .lab-subtitle {
@@ -130,33 +132,24 @@ nav ul {
     list-style: none;
     padding: 8px;
     margin: 0;
-    gap: 60px;              /* controls spacing safely */
-    flex-wrap: nowrap;      /* KEEP SINGLE LINE */
+    gap: 60px;
+    flex-wrap: nowrap; /* Always single line */
 }
 
 nav ul li {
-    margin: 0;              /* REMOVE large margins */
+    margin: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #0b3c5d;
     font-weight: 600;
-    white-space: nowrap;    /* prevents text break */
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
     color: #1d6fa5;
 }
-
-
-@media (max-width: 900px) {
-    nav ul {
-        flex-wrap: wrap;    /* allow wrapping on small screens */
-        gap: 20px;
-    }
-}
-
 
 /* =====================================================
    SECTIONS & CARDS (Fade-up on load)
@@ -198,6 +191,7 @@ section h2 {
     gap: 40px;
     align-items: flex-start;
     padding: 20px 0;
+    flex-wrap: nowrap; /* Never wrap */
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1.2s ease-out forwards;
@@ -209,7 +203,7 @@ section h2 {
 }
 
 .lab-vision-image img {
-    max-width: 390px;
+    width: 390px; /* Fixed width */
     height: auto;
     flex-shrink: 0;
 }
@@ -221,11 +215,11 @@ section h2 {
     display: flex;
     gap: 50px;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Never wrap */
 }
 
 .pi-profile img {
-    width: 360px;
+    width: 360px; /* Fixed width */
     height: auto;
 }
 
@@ -249,11 +243,11 @@ section h2 {
     display: flex;
     gap: 40px;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Never wrap */
 }
 
 .phd-profile img {
-    width: 200px;
+    width: 200px; /* Fixed width */
     height: auto;
     object-fit: cover;
     border-radius: 10px;
@@ -274,10 +268,14 @@ section h2 {
     margin: 8px 0 15px 20px;
 }
 
+/* =====================================================
+   CONTACT CARD
+===================================================== */
 .contact-card {
     display: flex;
     gap: 30px;
     align-items: stretch;
+    flex-wrap: nowrap; /* Never wrap */
 }
 
 .contact-text {
@@ -292,19 +290,9 @@ section h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Mobile layout */
-@media (max-width: 768px) {
-    .contact-card {
-        flex-direction: column;
-    }
-
-    .contact-map {
-        height: 260px;
-    }
-}
-
-
-
+/* =====================================================
+   NEWS SECTION
+===================================================== */
 .news-list {
     list-style-type: decimal;
     padding-left: 32px;
@@ -319,6 +307,7 @@ section h2 {
     gap: 30px;
     align-items: flex-start;
     margin-bottom: 25px;
+    flex-wrap: nowrap; /* Never wrap */
 }
 
 .news-text {
@@ -326,7 +315,7 @@ section h2 {
 }
 
 .news-image img {
-    max-width: 220px;
+    width: 220px; /* Fixed width */
     border-radius: 8px;
 }
 
@@ -342,45 +331,6 @@ footer {
 }
 
 /* =====================================================
-   RESPONSIVE DESIGN
+   REMOVE ALL RESPONSIVE BREAKPOINTS
+   All media queries removed to maintain fixed layout
 ===================================================== */
-@media (max-width: 900px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-logo img {
-        max-width: 260px;
-    }
-
-    .header-iit-logo img {
-        max-width: 100px;
-    }
-}
-
-@media (max-width: 800px) {
-    .lab-vision-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .phd-profile {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .phd-details {
-        text-align: left;
-    }
-}
-
-@media (max-width: 700px) {
-    .pi-profile {
-        flex-direction: column;
-        text-align: center;
-    }
-}

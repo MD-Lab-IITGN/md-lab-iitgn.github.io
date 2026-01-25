@@ -3,7 +3,6 @@
 ===================================================== */
 html {
     scroll-behavior: smooth;
-    overflow-x: auto; /* Allow horizontal scroll if needed */
 }
 
 body {
@@ -12,7 +11,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
-    min-width: 1300px; /* Force minimum width */
 }
 
 /* Fade Up (used across site) */
@@ -44,18 +42,18 @@ body {
 ===================================================== */
 header {
     background: linear-gradient(to right, #ffffff 30%, #1d6fa5 100%);
-    padding: 5px;
+    padding: 0.4vw;
     overflow: hidden;
 }
 
 .header-container {
-    max-width: 1300px;
+    max-width: 95vw;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 2.3vw;
+    flex-wrap: nowrap;
 }
 
 /* Logos & text (default = no animation) */
@@ -84,31 +82,30 @@ header {
     animation-delay: 0.3s;
 }
 
-/* Logo sizing - Fixed widths */
+/* Logo sizing - Using viewport units */
 .header-logo img {
-    width: 300px; /* Fixed width */
+    width: 23vw;
     height: auto;
 }
 
 .header-iit-logo img {
-    width: 170px; /* Fixed width */
+    width: 13vw;
     height: auto;
 }
 
 /* Header Typography */
 .lab-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
+    font-size: clamp(14px, 1.2vw, 24px);
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 0.23vw;
     color: #0b3c5d;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .lab-subtitle {
     font-family: "Times New Roman", Georgia, serif;
-    font-size: 1rem;
+    font-size: clamp(12px, 0.8vw, 16px);
     font-weight: 500;
     color: #333;
     line-height: 1.5;
@@ -130,10 +127,10 @@ nav ul {
     justify-content: center;
     align-items: center;
     list-style: none;
-    padding: 8px;
+    padding: 0.6vw;
     margin: 0;
-    gap: 60px;
-    flex-wrap: nowrap; /* Always single line */
+    gap: 4.6vw;
+    flex-wrap: nowrap;
 }
 
 nav ul li {
@@ -144,6 +141,7 @@ nav ul li a {
     text-decoration: none;
     color: #0b3c5d;
     font-weight: 600;
+    font-size: clamp(12px, 1vw, 18px);
     white-space: nowrap;
 }
 
@@ -155,8 +153,8 @@ nav ul li a:hover {
    SECTIONS & CARDS (Fade-up on load)
 ===================================================== */
 section {
-    padding: 0 20px;
-    max-width: 1100px;
+    padding: 0 1.5vw;
+    max-width: 85vw;
     margin: auto;
     opacity: 0;
     transform: translateY(30px);
@@ -166,21 +164,26 @@ section {
 
 section h2 {
     color: #0b3c5d;
-    margin-bottom: 20px;
-    border-left: 5px solid #1d6fa5;
-    padding-left: 15px;
+    margin-bottom: 1.5vw;
+    border-left: 0.4vw solid #1d6fa5;
+    padding-left: 1.2vw;
+    font-size: clamp(18px, 1.8vw, 32px);
 }
 
 .card {
     background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 1.9vw;
+    margin-bottom: 1.9vw;
+    border-radius: 0.6vw;
+    box-shadow: 0 0.3vw 0.8vw rgba(0,0,0,0.08);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s ease-out forwards;
     animation-delay: 0.3s;
+}
+
+.card p, .card ul li {
+    font-size: clamp(13px, 1vw, 18px);
 }
 
 /* =====================================================
@@ -188,10 +191,10 @@ section h2 {
 ===================================================== */
 .lab-vision-container {
     display: flex;
-    gap: 40px;
+    gap: 3vw;
     align-items: flex-start;
-    padding: 20px 0;
-    flex-wrap: nowrap; /* Never wrap */
+    padding: 1.5vw 0;
+    flex-wrap: nowrap;
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1.2s ease-out forwards;
@@ -202,8 +205,12 @@ section h2 {
     flex: 1;
 }
 
+.lab-vision-text p {
+    font-size: clamp(13px, 1vw, 18px);
+}
+
 .lab-vision-image img {
-    width: 390px; /* Fixed width */
+    width: 30vw;
     height: auto;
     flex-shrink: 0;
 }
@@ -213,27 +220,33 @@ section h2 {
 ===================================================== */
 .pi-profile {
     display: flex;
-    gap: 50px;
+    gap: 3.8vw;
     align-items: center;
-    flex-wrap: nowrap; /* Never wrap */
+    flex-wrap: nowrap;
 }
 
 .pi-profile img {
-    width: 360px; /* Fixed width */
+    width: 27.7vw;
     height: auto;
 }
 
 .pi-details h3 {
     margin-top: 0;
     color: #0b3c5d;
+    font-size: clamp(16px, 1.5vw, 24px);
 }
 
 .pi-details p {
-    margin: 6px 0;
+    margin: 0.5vw 0;
+    font-size: clamp(13px, 1vw, 18px);
 }
 
 .pi-details ul {
-    margin: 8px 0 15px 20px;
+    margin: 0.6vw 0 1.2vw 1.5vw;
+}
+
+.pi-details ul li {
+    font-size: clamp(13px, 1vw, 18px);
 }
 
 /* =====================================================
@@ -241,31 +254,37 @@ section h2 {
 ===================================================== */
 .phd-profile {
     display: flex;
-    gap: 40px;
+    gap: 3vw;
     align-items: center;
-    flex-wrap: nowrap; /* Never wrap */
+    flex-wrap: nowrap;
 }
 
 .phd-profile img {
-    width: 200px; /* Fixed width */
+    width: 15.4vw;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0.8vw;
+    box-shadow: 0 0.3vw 0.8vw rgba(0,0,0,0.1);
 }
 
 .phd-details h3 {
     margin-top: 0;
     color: #0b3c5d;
+    font-size: clamp(16px, 1.5vw, 24px);
 }
 
 .phd-details p {
-    margin: 6px 0;
+    margin: 0.5vw 0;
     line-height: 1.5;
+    font-size: clamp(13px, 1vw, 18px);
 }
 
 .phd-details ul {
-    margin: 8px 0 15px 20px;
+    margin: 0.6vw 0 1.2vw 1.5vw;
+}
+
+.phd-details ul li {
+    font-size: clamp(13px, 1vw, 18px);
 }
 
 /* =====================================================
@@ -273,21 +292,25 @@ section h2 {
 ===================================================== */
 .contact-card {
     display: flex;
-    gap: 30px;
+    gap: 2.3vw;
     align-items: stretch;
-    flex-wrap: nowrap; /* Never wrap */
+    flex-wrap: nowrap;
 }
 
 .contact-text {
     flex: 1.2;
 }
 
+.contact-text p {
+    font-size: clamp(13px, 1vw, 18px);
+}
+
 .contact-map {
     flex: 1;
-    min-height: 260px;
-    border-radius: 8px;
+    min-height: 20vw;
+    border-radius: 0.6vw;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0.3vw 0.8vw rgba(0,0,0,0.1);
 }
 
 /* =====================================================
@@ -295,28 +318,33 @@ section h2 {
 ===================================================== */
 .news-list {
     list-style-type: decimal;
-    padding-left: 32px;
+    padding-left: 2.5vw;
 }
 
 .news-list > li {
     list-style-position: outside;
+    font-size: clamp(13px, 1vw, 18px);
 }
 
 .news-card {
     display: flex;
-    gap: 30px;
+    gap: 2.3vw;
     align-items: flex-start;
-    margin-bottom: 25px;
-    flex-wrap: nowrap; /* Never wrap */
+    margin-bottom: 1.9vw;
+    flex-wrap: nowrap;
 }
 
 .news-text {
     flex: 2;
 }
 
+.news-text p {
+    font-size: clamp(13px, 1vw, 18px);
+}
+
 .news-image img {
-    width: 220px; /* Fixed width */
-    border-radius: 8px;
+    width: 17vw;
+    border-radius: 0.6vw;
 }
 
 /* =====================================================
@@ -326,11 +354,13 @@ footer {
     background: #0b3c5d;
     color: white;
     text-align: center;
-    padding: 25px 15px;
-    margin-top: 40px;
+    padding: 1.9vw 1.2vw;
+    margin-top: 3vw;
+    font-size: clamp(12px, 1vw, 16px);
 }
 
 /* =====================================================
-   REMOVE ALL RESPONSIVE BREAKPOINTS
-   All media queries removed to maintain fixed layout
+   NO MEDIA QUERIES - Design scales proportionally
+   All elements use viewport units (vw, vh) and clamp()
+   for consistent appearance across all screen sizes
 ===================================================== */

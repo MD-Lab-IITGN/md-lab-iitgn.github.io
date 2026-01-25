@@ -1,150 +1,164 @@
- body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        /* ===== Header ===== */
-        header {
-            background: linear-gradient(to right, #ffffff 30%, #1d6fa5 100%);
-            padding: 5px;
-            overflow: hidden;
-        }
-
-        .header-container {
-            max-width: 1300px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        /* Left MD Lab logo */
-        .header-logo img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            opacity: 0;
-            animation: fadeInLeft 1.2s ease-out forwards;
-        }
-
-        /* Header text */
-        .header-text {
-            flex: 1;
-            opacity: 0;
-            animation: fadeInLeft 1.2s ease-out forwards;
-            animation-delay: 0.15s;
-        }
-
-	/* ===== Header Typography ===== */
-
-
-/* ===== Header Typography ===== */
-
-.lab-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    color: #0b3c5d;   /* deep academic blue */
-    text-transform: uppercase;
+/* =====================================================
+   GLOBAL SETTINGS & ANIMATIONS
+===================================================== */
+html {
+    scroll-behavior: smooth;
 }
 
-.lab-subtitle {
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333333;
-    line-height: 1.5;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
-        
+/* Fade Up Animation (used across site) */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        /* Right IITGN logo */
-        .header-iit-logo img {
-            max-width: 170px;
-            width: 100%;
-            height: auto;
-            opacity: 0;
-            animation: fadeInLeft 1.2s ease-out forwards;
-            animation-delay: 0.3s;
-        }
+/* Fade In Left Animation (Home header only) */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        /* ===== Animation ===== */
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+/* =====================================================
+   HEADER
+===================================================== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-        /* ===== Navigation ===== */
-        nav {
-            background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* Logos & text (default = no animation) */
+.header-logo img,
+.header-text,
+.header-iit-logo img {
+    opacity: 1;
+    animation: none;
+}
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
+/* Home page header animation */
+.home .header-logo img {
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-out forwards;
+}
 
-        nav ul li {
-            margin: 8px 50px;
-        }
+.home .header-text {
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-out forwards;
+    animation-delay: 0.15s;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #0b3c5d;
-            font-weight: 600;
-        }
+.home .header-iit-logo img {
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
 
-        nav ul li a:hover {
-            color: #1d6fa5;
-        }
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
 
-        /* ===== Sections ===== */
-        section {
-            padding: 0 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+/* =====================================================
+   NAVIGATION
+===================================================== */
+nav {
+    background-color: #444;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        section h2 {
-            color: #0b3c5d;
-            margin-bottom: 20px;
-            border-left: 5px solid #1d6fa5;
-            padding-left: 15px;
-        }
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        }
+nav ul li {
+    margin: 0;
+}
 
-/* ===== Lab Vision Two-Column Layout ===== */
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* =====================================================
+   SECTIONS & CARDS (Fade-up on load)
+===================================================== */
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+section h2 {
+    color: #667eea;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* =====================================================
+   LAB VISION LAYOUT
+===================================================== */
 .lab-vision-container {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-	padding: 20px 0;
+    padding: 20px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
 .lab-vision-text {
@@ -157,7 +171,141 @@
     flex-shrink: 0;
 }
 
-/* Mobile */
+/* =====================================================
+   PI PROFILE
+===================================================== */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    margin: 0;
+    color: #764ba2;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+/* =====================================================
+   TEAM GRID
+===================================================== */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    margin: 10px 0 5px;
+    color: #667eea;
+}
+
+.team-member p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* =====================================================
+   NEWS SECTION
+===================================================== */
+.news-list {
+    list-style-type: decimal;
+    padding-left: 32px;
+}
+
+.news-list > li {
+    list-style-position: outside;
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   CONTACT CARD
+===================================================== */
+.contact-card {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.contact-text {
+    flex: 1.2;
+}
+
+.contact-map {
+    flex: 1;
+    min-height: 260px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .contact-card {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 260px;
+    }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-logo img {
+        max-width: 260px;
+    }
+
+    .header-iit-logo img {
+        max-width: 100px;
+    }
+}
+
 @media (max-width: 800px) {
     .lab-vision-container {
         flex-direction: column;
@@ -165,102 +313,26 @@
     }
 }
 
-        footer {
-            background: #0b3c5d;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-            margin-top: 40px;
-        }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 900px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-logo img {
-                max-width: 260px;
-            }
-
-            .header-iit-logo img {
-                max-width: 100px;
-            }
-        }
-/* ===== PI Profile Card ===== */
-.pi-profile {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.pi-profile img {
-    width: 360px;
-    height: auto;
-    
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
     }
 
-.pi-details h3 {
-    margin-top: 0;
-    color: #0b3c5d;
-}
-
-.pi-details p {
-    margin: 6px 0;
-}
-
-.pi-details ul {
-    margin: 8px 0 15px 20px;
-}
-
-
-
-.section-title {
-    margin-bottom: 20px;
-    color: #0b3c5d;
-}
-
-.phd-profile {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.phd-profile img {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px; /* use 50% for circular photo */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.phd-details h3 {
-    margin-top: 0;
-    color: #0b3c5d;
-}
-
-.phd-details p {
-    margin: 6px 0;
-    line-height: 1.5;
-}
-
-.phd-details ul {
-    margin: 8px 0 15px 20px;
-}
-
-/* Mobile-friendly */
-@media (max-width: 768px) {
-    .phd-profile {
+    nav ul {
         flex-direction: column;
-        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+
+    .profile {
+        flex-direction: column;
         text-align: center;
     }
 
-    .phd-details {
-        text-align: left;
+    .team-grid {
+        grid-template-columns: 1fr;
     }
 }
 

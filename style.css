@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
@@ -5,6 +9,32 @@ body {
             color: #333;
             background-color: #f8f9fa;
         }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Left (Home header only) */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
 
         /* ===== Header ===== */
         header {
@@ -21,6 +51,23 @@ body {
             justify-content: space-between;
             gap: 30px;
         }
+/* Home page header animation */
+.home .header-logo img {
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-out forwards;
+}
+
+.home .header-text {
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-out forwards;
+    animation-delay: 0.15s;
+}
+
+.home .header-iit-logo img {
+    opacity: 0;
+    animation: fadeInLeft 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
 
         /* Left MD Lab logo */
         .header-logo img {
@@ -73,17 +120,7 @@ body {
             animation-delay: 0.3s;
         }
 
-        /* ===== Animation ===== */
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+        
 
         /* ===== Navigation ===== */
         nav {
@@ -145,6 +182,9 @@ body {
     gap: 40px;
     align-items: flex-start;
 	padding: 20px 0;
+	transform: translateY(40px);
+    animation: fadeUp 1.2s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
 .lab-vision-text {
@@ -270,3 +310,4 @@ body {
         text-align: center;
     }
 }
+

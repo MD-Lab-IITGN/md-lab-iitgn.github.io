@@ -1,19 +1,4 @@
-/* =====================================================
-   GLOBAL SETTINGS & ANIMATIONS
-===================================================== */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-/* Fade Up Animation (used across site) */
+/* ===== Animation Keyframes ===== */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -25,320 +10,29 @@ body {
     }
 }
 
-/* Fade In Left Animation (Home header only) */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* =====================================================
-   HEADER
-===================================================== */
-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Logos & text (default = no animation) */
-.header-logo img,
-.header-text,
-.header-iit-logo img {
-    opacity: 1;
-    animation: none;
-}
-
-/* Home page header animation */
-.home .header-logo img {
-    opacity: 0;
-    animation: fadeInLeft 1.2s ease-out forwards;
-}
-
-.home .header-text {
-    opacity: 0;
-    animation: fadeInLeft 1.2s ease-out forwards;
-    animation-delay: 0.15s;
-}
-
-.home .header-iit-logo img {
-    opacity: 0;
-    animation: fadeInLeft 1.2s ease-out forwards;
-    animation-delay: 0.3s;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-nav {
-    background-color: #444;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
-
-/* =====================================================
-   SECTIONS & CARDS (Fade-up on load)
-===================================================== */
+/* ===== Animated Elements ===== */
 section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s ease-out forwards;
     animation-delay: 0.2s;
 }
 
-section h2 {
-    color: #667eea;
-    border-bottom: 2px solid #667eea;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
 .card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s ease-out forwards;
     animation-delay: 0.3s;
 }
 
-/* =====================================================
-   LAB VISION LAYOUT
-===================================================== */
 .lab-vision-container {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    padding: 20px 0;
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1.2s ease-out forwards;
     animation-delay: 0.2s;
 }
 
-.lab-vision-text {
-    flex: 1;
-}
-
-.lab-vision-image img {
-    max-width: 390px;
-    height: auto;
-    flex-shrink: 0;
-}
-
-/* =====================================================
-   PI PROFILE
-===================================================== */
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.profile img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile-info h3 {
-    margin: 0;
-    color: #764ba2;
-}
-
-.profile-info p {
-    margin: 5px 0;
-}
-
-/* =====================================================
-   TEAM GRID
-===================================================== */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.team-member {
-    text-align: center;
-}
-
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.team-member h4 {
-    margin: 10px 0 5px;
-    color: #667eea;
-}
-
-.team-member p {
-    margin: 5px 0;
-    font-size: 0.9em;
-}
-
-/* =====================================================
-   NEWS SECTION
-===================================================== */
-.news-list {
-    list-style-type: decimal;
-    padding-left: 32px;
-}
-
-.news-list > li {
-    list-style-position: outside;
-    margin-bottom: 10px;
-}
-
-/* =====================================================
-   CONTACT CARD
-===================================================== */
-.contact-card {
-    display: flex;
-    gap: 30px;
-    align-items: stretch;
-}
-
-.contact-text {
-    flex: 1.2;
-}
-
-.contact-map {
-    flex: 1;
-    min-height: 260px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-    .contact-card {
-        flex-direction: column;
-    }
-
-    .contact-map {
-        height: 260px;
-    }
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* =====================================================
-   RESPONSIVE DESIGN
-===================================================== */
-@media (max-width: 900px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-logo img {
-        max-width: 260px;
-    }
-
-    .header-iit-logo img {
-        max-width: 100px;
-    }
-}
-
-@media (max-width: 800px) {
-    .lab-vision-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li a {
-        padding: 10px;
-    }
-
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .pi-profile {
-        flex-direction: column;
-        text-align: center;
-    }
+/* ===== Smooth Scrolling ===== */
+html {
+    scroll-behavior: smooth;
 }

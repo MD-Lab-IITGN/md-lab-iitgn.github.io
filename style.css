@@ -527,8 +527,6 @@ footer {
 @media (max-width: 480px) {
     header {
         padding: 12px 14px;
-        background: #ffffff;
-        border-bottom: 3px solid #1d6fa5;
     }
 
     .header-logo img {
@@ -559,6 +557,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

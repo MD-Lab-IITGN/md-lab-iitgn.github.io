@@ -525,8 +525,10 @@ footer {
 ===================================================== */
 @media (max-width: 480px) {
     header {
-        padding: 12px 14px;
-    }
+    padding: 12px 14px;
+    background: linear-gradient(to bottom, #ffffff 30%, #1d6fa5 100%);
+}
+
 
     .header-logo img {
         max-width: 170px;
@@ -556,6 +558,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

@@ -549,9 +549,6 @@ footer {
         color: #555;
     }
 
-    /* rest of your existing 480px rules below */
-}
-
     .card {
         padding: 14px;
         border-radius: 6px;
@@ -562,6 +559,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

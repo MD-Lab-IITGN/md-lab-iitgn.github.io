@@ -342,45 +342,97 @@ footer {
 }
 
 /* =====================================================
-   RESPONSIVE DESIGN
+   MOBILE IMPROVEMENTS (does not affect desktop)
 ===================================================== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
+    /* Navigation becomes scrollable instead of breaking */
+    nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Header stacking */
     .header-container {
         flex-direction: column;
+        gap: 10px;
         text-align: center;
     }
 
     .header-logo img {
-        max-width: 260px;
+        max-width: 220px;
     }
 
     .header-iit-logo img {
-        max-width: 100px;
+        max-width: 90px;
     }
-}
 
-@media (max-width: 800px) {
+    .lab-title {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .lab-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Sections spacing */
+    section {
+        padding: 0 15px;
+    }
+
+    /* Lab vision stack */
     .lab-vision-container {
         flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .phd-profile {
-        flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
-    .phd-details {
-        text-align: left;
+    .lab-vision-image img {
+        max-width: 280px;
     }
-}
 
-@media (max-width: 700px) {
+    /* PI profile */
     .pi-profile {
         flex-direction: column;
-        text-align: center;
+        gap: 20px;
     }
+
+    .pi-profile img {
+        width: 260px;
+    }
+
+    /* PhD profiles */
+    .phd-profile {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .phd-profile img {
+        width: 160px;
+    }
+
+    /* News cards */
+    .news-card {
+        flex-direction: column;
+    }
+
+    .news-image img {
+        max-width: 100%;
+    }
+
+    /* Contact section */
+    .contact-card {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 220px;
+    }
+
 }

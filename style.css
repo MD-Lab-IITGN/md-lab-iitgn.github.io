@@ -363,26 +363,27 @@ footer {
 @media (max-width: 900px) {
     .header-container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding: 10px 0;
+        padding: 14px 16px;
         gap: 10px;
     }
 
     .header-logo img {
-        max-width: 260px;
+        max-width: 200px;
     }
 
     .header-iit-logo img {
-        max-width: 100px;
+        max-width: 110px;
     }
 
     .lab-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         letter-spacing: 2px;
     }
 
     .lab-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 
     /* Switch to hamburger nav */
@@ -429,7 +430,22 @@ footer {
    RESPONSIVE — MOBILE (≤ 768px)
 ===================================================== */
 @media (max-width: 768px) {
-    section {
+   @media (max-width: 768px) {
+    header {
+        padding: 14px 16px;
+    }
+
+    .header-logo,
+    .header-iit-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-text {
+        padding: 0;
+    }
+
+   section {
         padding: 0 14px;
     }
 
@@ -510,25 +526,31 @@ footer {
 ===================================================== */
 @media (max-width: 480px) {
     header {
-        background: linear-gradient(to bottom, #ffffff 60%, #1d6fa5 100%);
+        padding: 12px 14px;
+        background: #ffffff;
+        border-bottom: 3px solid #1d6fa5;
     }
 
     .header-logo img {
-        max-width: 200px;
+        max-width: 170px;
     }
 
     .header-iit-logo img {
-        max-width: 80px;
+        max-width: 85px;
     }
 
     .lab-title {
-        font-size: 0.9rem;
-        letter-spacing: 1px;
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
     }
 
     .lab-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
+        color: #555;
     }
+
+    /* rest of your existing 480px rules below */
+}
 
     .card {
         padding: 14px;
@@ -540,3 +562,4 @@ footer {
         padding: 18px 12px;
     }
 }
+

@@ -144,7 +144,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 8px 0;       /* remove large horizontal margins */
+    margin: 8px 50px;       /* remove large horizontal margins */
     white-space: nowrap; /* keeps text on one line */
 }
 
@@ -319,6 +319,7 @@ nav ul li a:hover {
         text-align: center;
     }
 }
+
 
 
 

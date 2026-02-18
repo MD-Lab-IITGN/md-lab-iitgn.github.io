@@ -361,6 +361,9 @@ footer {
    RESPONSIVE — TABLET (≤ 900px)
 ===================================================== */
 @media (max-width: 900px) {
+   header {
+        background: linear-gradient(to bottom, #ffffff 30%, #1d6fa5 100%);
+    }
     .header-container {
         flex-direction: column;
         align-items: center;
@@ -557,6 +560,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

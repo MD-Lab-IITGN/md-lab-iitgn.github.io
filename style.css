@@ -432,7 +432,6 @@ footer {
 /* =====================================================
    RESPONSIVE — MOBILE (≤ 768px)
 ===================================================== */
-@media (max-width: 768px) {
    @media (max-width: 768px) {
     header {
         padding: 14px 16px;
@@ -560,6 +559,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

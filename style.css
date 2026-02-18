@@ -122,37 +122,44 @@ body {
 
         
 
-        /* ===== Navigation ===== */
-        nav {
-            background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* ===== Navigation ===== */
+nav {
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-        nav ul li {
-            margin: 8px 50px;
-        }
+    flex-wrap: nowrap;   /* prevents tabs from wrapping */
+    gap: 25px;           /* spacing between tabs */
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #0b3c5d;
-            font-weight: 600;
-        }
+nav ul li {
+    margin: 8px 0;       /* remove large horizontal margins */
+    white-space: nowrap; /* keeps text on one line */
+}
 
-        nav ul li a:hover {
-            color: #1d6fa5;
-        }
+nav ul li a {
+    text-decoration: none;
+    color: #0b3c5d;
+    font-weight: 600;
+    padding: 10px 6px;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #1d6fa5;
+}
+}
 
         /* ===== Sections ===== */
         section {
@@ -312,5 +319,6 @@ body {
         text-align: center;
     }
 }
+
 
 

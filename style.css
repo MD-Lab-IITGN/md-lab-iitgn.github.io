@@ -113,7 +113,7 @@ header {
 }
 
 /* =====================================================
-   NAVIGATION (FIXED SINGLE LINE)
+   NAVIGATION
 ===================================================== */
 nav {
     background: #ffffff;
@@ -123,6 +123,37 @@ nav {
     z-index: 100;
 }
 
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #0b3c5d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger → X animation */
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -130,33 +161,24 @@ nav ul {
     list-style: none;
     padding: 8px;
     margin: 0;
-    gap: 60px;              /* controls spacing safely */
-    flex-wrap: nowrap;      /* KEEP SINGLE LINE */
+    gap: 60px;
+    flex-wrap: nowrap;
 }
 
 nav ul li {
-    margin: 0;              /* REMOVE large margins */
+    margin: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #0b3c5d;
     font-weight: 600;
-    white-space: nowrap;    /* prevents text break */
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
     color: #1d6fa5;
 }
-
-
-@media (max-width: 900px) {
-    nav ul {
-        flex-wrap: wrap;    /* allow wrapping on small screens */
-        gap: 20px;
-    }
-}
-
 
 /* =====================================================
    SECTIONS & CARDS (Fade-up on load)
@@ -210,6 +232,7 @@ section h2 {
 
 .lab-vision-image img {
     max-width: 390px;
+    width: 100%;
     height: auto;
     flex-shrink: 0;
 }
@@ -274,6 +297,9 @@ section h2 {
     margin: 8px 0 15px 20px;
 }
 
+/* =====================================================
+   CONTACT
+===================================================== */
 .contact-card {
     display: flex;
     gap: 30px;
@@ -292,19 +318,9 @@ section h2 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Mobile layout */
-@media (max-width: 768px) {
-    .contact-card {
-        flex-direction: column;
-    }
-
-    .contact-map {
-        height: 260px;
-    }
-}
-
-
-
+/* =====================================================
+   NEWS
+===================================================== */
 .news-list {
     list-style-type: decimal;
     padding-left: 32px;
@@ -342,35 +358,22 @@ footer {
 }
 
 /* =====================================================
-   MOBILE IMPROVEMENTS (does not affect desktop)
+   RESPONSIVE — TABLET (≤ 900px)
 ===================================================== */
-@media (max-width: 768px) {
-
-    /* Navigation becomes scrollable instead of breaking */
-    nav ul {
-        justify-content: flex-start;
-        overflow-x: auto;
-        gap: 20px;
-        padding: 10px;
-    }
-
-    nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Header stacking */
+@media (max-width: 900px) {
     .header-container {
         flex-direction: column;
-        gap: 10px;
         text-align: center;
+        padding: 10px 0;
+        gap: 10px;
     }
 
     .header-logo img {
-        max-width: 220px;
+        max-width: 260px;
     }
 
     .header-iit-logo img {
-        max-width: 90px;
+        max-width: 100px;
     }
 
     .lab-title {
@@ -382,57 +385,158 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Sections spacing */
-    section {
-        padding: 0 15px;
+    /* Switch to hamburger nav */
+    .nav-toggle {
+        display: flex;
+        margin-left: auto;
     }
 
-    /* Lab vision stack */
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-top: 1px solid #e8edf2;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    nav ul li a:hover {
+        background: #f0f6fc;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+===================================================== */
+@media (max-width: 768px) {
+    section {
+        padding: 0 14px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    /* Lab vision */
     .lab-vision-container {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
     .lab-vision-image img {
-        max-width: 280px;
+        max-width: 100%;
     }
 
     /* PI profile */
     .pi-profile {
         flex-direction: column;
-        gap: 20px;
+        text-align: center;
     }
 
     .pi-profile img {
-        width: 260px;
+        width: 100%;
+        max-width: 300px;
     }
 
-    /* PhD profiles */
+    /* PhD profile */
     .phd-profile {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
+        text-align: center;
     }
 
     .phd-profile img {
         width: 160px;
     }
 
-    /* News cards */
-    .news-card {
-        flex-direction: column;
+    .phd-details {
+        text-align: left;
     }
 
-    .news-image img {
-        max-width: 100%;
-    }
-
-    /* Contact section */
+    /* Contact */
     .contact-card {
         flex-direction: column;
     }
 
     .contact-map {
-        height: 220px;
+        height: 260px;
+        min-height: unset;
     }
 
+    /* News */
+    .news-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .news-image img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Typography scale-down */
+    .lab-title {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+===================================================== */
+@media (max-width: 480px) {
+    header {
+        background: linear-gradient(to bottom, #ffffff 60%, #1d6fa5 100%);
+    }
+
+    .header-logo img {
+        max-width: 200px;
+    }
+
+    .header-iit-logo img {
+        max-width: 80px;
+    }
+
+    .lab-title {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .lab-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .card {
+        padding: 14px;
+        border-radius: 6px;
+    }
+
+    footer {
+        font-size: 0.85rem;
+        padding: 18px 12px;
+    }
 }

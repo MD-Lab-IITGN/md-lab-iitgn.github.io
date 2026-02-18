@@ -36,6 +36,9 @@
 </header>
 <div>
 <nav>
+	<button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
     <ul>
         <li><a href="home.html">Home</a></li>
 	<li><a href="home.html#about">About</a></li>
@@ -89,8 +92,22 @@
     <p>© 2026 MD Lab, IIT Gandhinagar</p>
     <p>Designed for academic research excellence</p>
 </footer>
-
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const navUl = document.querySelector('nav ul');
+  toggle.addEventListener('click', function () {
+    toggle.classList.toggle('open');
+    navUl.classList.toggle('open');
+  });
+  navUl.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      toggle.classList.remove('open');
+      navUl.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
+
 
 

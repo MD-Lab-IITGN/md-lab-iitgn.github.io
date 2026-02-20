@@ -25,7 +25,7 @@ body {
     }
 }
 
-/* Fade In Left (Home header only) */
+/* Fade In Left (Index header only) */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -560,6 +560,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

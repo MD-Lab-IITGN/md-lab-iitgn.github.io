@@ -63,19 +63,19 @@ header {
     animation: none;
 }
 
-/* Home page header animation */
-.home .header-logo img {
+/* Index page header animation */
+.index .header-logo img {
     opacity: 0;
     animation: fadeInLeft 1.2s ease-out forwards;
 }
 
-.home .header-text {
+.index .header-text {
     opacity: 0;
     animation: fadeInLeft 1.2s ease-out forwards;
     animation-delay: 0.15s;
 }
 
-.home .header-iit-logo img {
+.index .header-iit-logo img {
     opacity: 0;
     animation: fadeInLeft 1.2s ease-out forwards;
     animation-delay: 0.3s;
@@ -560,6 +560,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

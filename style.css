@@ -25,7 +25,7 @@ body {
     }
 }
 
-/* Fade In Left (Index header only) */
+/* Fade In Left (home header only) */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -63,19 +63,19 @@ header {
     animation: none;
 }
 
-/* Index page header animation */
-.index .header-logo img {
+/* home page header animation */
+.home .header-logo img {
     opacity: 0;
     animation: fadeInLeft 1.2s ease-out forwards;
 }
 
-.index .header-text {
+.home .header-text {
     opacity: 0;
     animation: fadeInLeft 1.2s ease-out forwards;
     animation-delay: 0.15s;
 }
 
-.index .header-iit-logo img {
+.home .header-iit-logo img {
     opacity: 0;
     animation: fadeInLeft 1.2s ease-out forwards;
     animation-delay: 0.3s;
@@ -120,7 +120,7 @@ nav {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-home: 100;
 }
 
 /* Hamburger button — hidden on desktop */
@@ -560,6 +560,7 @@ footer {
         padding: 18px 12px;
     }
 }
+
 
 
 

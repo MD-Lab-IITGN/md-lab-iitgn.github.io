@@ -3,7 +3,26 @@
 
    <url>
       <loc>https://md-lab-iitgn.github.io/</loc>
+      <lastmod>2026-02-20</lastmod>
       <priority>1.0</priority>
+   </url>
+
+   <url>
+      <loc>https://md-lab-iitgn.github.io/research/</loc>
+      <lastmod>2026-02-20</lastmod>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://md-lab-iitgn.github.io/publications/</loc>
+      <lastmod>2026-02-20</lastmod>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://md-lab-iitgn.github.io/team/</loc>
+      <lastmod>2026-02-20</lastmod>
+      <priority>0.7</priority>
    </url>
 
 </urlset>
